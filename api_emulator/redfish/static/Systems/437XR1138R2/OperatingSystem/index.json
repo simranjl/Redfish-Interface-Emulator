@@ -1,0 +1,18 @@
+{
+    "@odata.type": "#OperatingSystem.v1_1_0.OperatingSystem",
+    "Id": "OperatingSystem",
+    "Name": "Computer Operating System",
+    "Type": "Linux",
+    "Description": "Operating System of the current computer system",
+    "Kernel": {
+        "Name": "Linux Kernel",
+        "Version": "6.6.52"
+    },
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "@odata.context": "/redfish/v1/$metadata#Systems/437XR1138R2/OperatingSystem",
+    "@odata.id": "/redfish/v1/Systems/437XR1138R2/OperatingSystem",
+    "@Redfish.Copyright": "Copyright 2014-2016 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright."
+}
