@@ -41,6 +41,8 @@ from .redfish.processor import Processor, Processors
 from .redfish.memory import Memory, MemoryCollection
 from .redfish.simplestorage import SimpleStorage, SimpleStorageCollection
 from .redfish.ethernetinterface import EthernetInterfaceCollection, EthernetInterface
+from .redfish.storage_api import Storage, StorageCollection
+from .redfish.operating_system_api import OperatingSystem
 from .redfish.ResetActionInfo_api import ResetActionInfo_API
 from .redfish.ResetAction_api import ResetAction_API
 # PCIe Switch imports
@@ -198,6 +200,14 @@ class ResourceManager(object):
                 resource_class_kwargs={'rb': g.rest_base,'suffix':'Systems'})
         g.api.add_resource(EthernetInterface, '/redfish/v1/Systems/<string:ident1>/EthernetInterfaces/<string:ident2>',
                 '/redfish/v1/CompositionService/ResourceBlocks/<string:ident1>/EthernetInterfaces/<string:ident2>')
+        # System SubResources
+        g.api.add_resource(StorageCollection, '/redfish/v1/Systems/<string:ident>/Storage', 
+                resource_class_kwargs={'rb': g.rest_base,'suffix': 'Systems'})
+        g.api.add_resource(Storage, '/redfish/v1/Systems/<string:system_ident>/Storage/<string:storage_ident>', 
+                resource_class_kwargs={'rb': g.rest_base, 'suffix':'Systems'})
+        # System SubResources
+        g.api.add_resource(OperatingSystem, '/redfish/v1/Systems/<string:ident>/OperatingSystem', 
+                resource_class_kwargs={'rb': g.rest_base, 'suffix': 'Systems'})
         # System SubResources
         g.api.add_resource(ResetActionInfo_API, '/redfish/v1/Systems/<string:ident>/ResetActionInfo',
                 resource_class_kwargs={'rb': g.rest_base})
