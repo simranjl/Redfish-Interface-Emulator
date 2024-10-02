@@ -10,7 +10,7 @@ STORAGE_TEMPLATE = {
         "Health": "OK",
         "State": "Enabled"
     }, 
-    "Drives": {drives}
+    "Drives": None
 }
 
 

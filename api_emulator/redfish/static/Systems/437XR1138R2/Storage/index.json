@@ -4,7 +4,7 @@
     "Members@odata.count": 1,
     "Members": [
         {
-            "@odata.id": "/redfish/v1/$metadata#Systems/437XR1138R2/Storage/1"
+            "@odata.id": "/redfish/v1/Systems/437XR1138R2/Storage/1"
         }
     ],
     "@odata.id": "/redfish/v1/Systems/437XR1138R2/Storage",

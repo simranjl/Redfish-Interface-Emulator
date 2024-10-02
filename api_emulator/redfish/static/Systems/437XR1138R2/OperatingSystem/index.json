@@ -12,7 +12,6 @@
         "State": "Enabled",
         "Health": "OK"
     },
-    "@odata.context": "/redfish/v1/$metadata#Systems/437XR1138R2/OperatingSystem",
     "@odata.id": "/redfish/v1/Systems/437XR1138R2/OperatingSystem",
     "@Redfish.Copyright": "Copyright 2014-2016 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright."
 }

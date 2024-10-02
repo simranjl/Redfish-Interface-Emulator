@@ -44,9 +44,7 @@ class StorageCollection(Resource):
         
     
     def get(self, ident):
-    """
-    Creates the template for a Storage Collection and returns it
-    """
+    # Creates the template for a Storage Collection and returns it
         try:
             logging.info("Calling Storage Collection GET API")
             if ident not in members:

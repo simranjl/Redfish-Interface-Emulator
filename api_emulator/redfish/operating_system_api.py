@@ -9,7 +9,7 @@ from flask_restful import Resource
 import sys, traceback
 import logging
 
-from .templates.OperatingSystem import format_operating_system_template
+from .templates.operatingsystem import format_operating_system_template
 
 members = {}
 INTERNAL_ERROR = 500
