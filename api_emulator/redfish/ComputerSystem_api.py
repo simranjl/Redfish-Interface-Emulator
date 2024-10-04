@@ -25,7 +25,7 @@ from .memory import members as memory
 from .ethernetinterface import members as ethernetinterfaces
 from .simplestorage import members as simplestorage
 from .storage_api import members as storage
-from .operating_system_api import members as operatingsystem
+# from .operating_system_api import members as operatingsystem
 from .ResourceBlock_api import members as resource_blocks
 
 members = {}
@@ -272,7 +272,7 @@ def CreateComposedSystem(req):
         blocks = req['Links']['ResourceBlocks']
         map_zones = dict()
 
-        resource_ids={'Processors':[],'Memory':[],'SimpleStorage':[],'EthernetInterfaces':[], 'OperatingSystem': [], 'Storage': []}
+        resource_ids={'Processors':[],'Memory':[],'SimpleStorage':[],'EthernetInterfaces':[], 'Storage': []}
 
         for block in blocks:
             block = block['@odata.id'].replace(rb + 'CompositionService/ResourceBlocks/','')
@@ -386,17 +386,6 @@ def CreateComposedSystem(req):
                             except:
                                 storage[req['Name']] = {}
                                 storage[req['Name']][device_back] = storage[block][device]
-                        elif device_type == 'OperatingSystem':
-                            device = device['@odata.id'].replace(rb + 'CompositionService/ResourceBlocks/','')
-                            device_back = device
-                            block = device.split('/', 1)[0]
-                            device = device.split('/', 1)[-1]
-                            device = device.split('/', 1)[-1]
-                            try:
-                                operatingsystem[req['Name']][device_back] = operatingsystem[block][device]
-                            except:
-                                operatingsystem[req['Name']] = {}
-                                operatingsystem[req['Name']][device_back] = operatingsystem[block][device]
 
 
                 # Add ResourceBlocks to Links
@@ -423,7 +412,7 @@ def CreateComposedSystem(req):
 
 def DeleteComposedSystem(ident):
     rb = g.rest_base
-    resource_ids={'Processors':[],'Memory':[],'SimpleStorage':[],'EthernetInterfaces':[], 'OperatingSystem': [], 'Storage': []}
+    resource_ids={'Processors':[],'Memory':[],'SimpleStorage':[],'EthernetInterfaces':[], 'Storage': []}
 
     # Verify if the System exists and if is of type - "SystemType": "Composed"
     if ident in members:
@@ -466,10 +455,7 @@ def DeleteComposedSystem(ident):
                             device_back = device['@odata.id'].replace(rb + 'CompositionService/ResourceBlocks/','')
                             del storage[ident][device_back]
                             if storage[ident]=={}: del storage[ident]
-                        elif device_type == 'OperatingSystem':
-                            device_back = device['@odata.id'].replace(rb + 'CompositionService/ResourceBlocks/','')
-                            del operatingsystem[ident][device_back]
-                            if operatingsystem[ident]=={}: del operatingsystem[ident]
+
 
             # Remove Composed System from System list
             del members[ident]
