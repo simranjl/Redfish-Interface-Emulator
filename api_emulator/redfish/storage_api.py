@@ -5,6 +5,7 @@ import sys, traceback
 import logging
 import g
 from .templates.storage import format_storage_template
+from .drives_api import DrivesAPI
 
 members = {}
 INTERNAL_ERROR = 500
@@ -69,5 +70,5 @@ def CreateStorage(**kwargs):
     if suffix_id not in members:
         members[suffix_id] = {}
     members[suffix_id][storage_id] = format_storage_template(**kwargs)
-    g.api.add_resource(Drives, '/redfish/v1/Systems/<string:system_ident>/Storage/<string:storage_ident>/Drives/<string:drive_ident>')
+    g.api.add_resource(DrivesAPI, '/redfish/v1/Systems/<string:system_ident>/Storage/<string:storage_ident>/Drives/<string:drive_ident>')
                 
