@@ -90,6 +90,9 @@
     "EthernetInterfaces": {
         "@odata.id": "/redfish/v1/Systems/437XR1138R2/EthernetInterfaces"
     },
+    "Storage": {
+        "@odata.id": "/redfish/v1/Systems/437XR1138R2/Storage"
+    },
     "SimpleStorage": {
         "@odata.id": "/redfish/v1/Systems/437XR1138R2/SimpleStorage"
     },

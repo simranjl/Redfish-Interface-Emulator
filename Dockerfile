@@ -12,7 +12,7 @@ RUN pip install --upgrade pip && \
 COPY . /usr/src/app/.
 
 # Env settings
-EXPOSE 5000
-HEALTHCHECK CMD curl --fail http://127.0.0.1:5000/redfish/v1/ || exit 1
+EXPOSE 8000
+HEALTHCHECK CMD curl --fail http://127.0.0.1:8000/redfish/v1/ || exit 1
 WORKDIR /usr/src/app
-ENTRYPOINT ["python", "emulator.py"]
+ENTRYPOINT ["python", "emulator.py", "-port", "8000"]
