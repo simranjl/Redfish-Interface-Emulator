@@ -13,11 +13,16 @@ _TEMPLATE = {'@odata.context': '{rb}$metadata#Memory.Memory',
              'Id': '{memory_id}',
              'Links': {'Chassis': {'@odata.id': '{rb}Chassis/{chassis_id}'}},
              'Manufacturer': 'Generic',
+             'metrics': {
+                 '@odata.id': '{rb}{suffix}/{suffix_id}/Memory/{memory_id}/MemoryMetrics'
+                },
              'MemoryDeviceType': '',  # DDR4
              'MemoryType': '',  # DRAM,NVDIMM_N,F,P
              'OperatingMemoryModes': [],  # Volatile,PMEM, Block
+             'OperatingSpeedMHz': None,
              'SerialNumber': 'TJ27JXQY',
              'Status': {'Health': 'OK', 'State': 'Enabled'},
+             'Enabled': True,
              'VendorID': 'Generic'}
 
 
