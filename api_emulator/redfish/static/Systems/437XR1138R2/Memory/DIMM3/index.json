@@ -8,11 +8,15 @@
 	"DataWidthBits": 64,
 	"BusWidthBits": 72,
 	"ErrorCorrection": "MultiBitECC",
+	"Enabled": true,
 	"MemoryLocation": {
 		"Socket": 2,
 		"MemoryController": 2,
 		"Channel": 1,
 		"Slot": 3
+	},
+	"Metrics": {
+		"@odata.id": "/redfish/v1/Systems/437XR1138R2/Memory/DIMM3/MemoryMetrics"
 	},
 	"MemoryType": "DRAM",
 	"MemoryDeviceType": "DDR4",
@@ -20,6 +24,7 @@
 	"MemoryMedia": [
 		"DRAM"
 	],
+	"OperatingSpeedMhz": 1895,
 	"Status": {
 		"State": "Enabled",
 		"Health": "OK"
