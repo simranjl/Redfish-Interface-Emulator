@@ -8,6 +8,9 @@
         "Health": "OK",
         "State": "Enabled"
     },
+    "EnvironmentMetrics": {
+        "@odata.id": "/redfish/v1/Systems/437XR1138R2/Storage/DR3/EnvironmentMetrics"
+    },
     "SerialNumber": "4658976320",
     "CapacityBytes": 90657790000,
     "@odata.context": "/redfish/v1/$metadata#Systems/437XR1138R2/Storage/1/Drives/DR3"
