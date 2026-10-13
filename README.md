@@ -156,7 +156,7 @@ Once the files are created, they are placed in the emulator directory structure.
 
 * The template-file is placed in the directory ./api\_emulator/Redfish/template
 * The API-file is placed in the directory ./api\_emulator/Redfish
-* If the resource in the Service Root, the the emulator.py file needs to be edited.
+* If the resource in the Service Root, then the emulator.py file needs to be edited.
 	* If the dynamic resource replaces a static resource, then replace the line which loads the static mockup with the line to add to dynamic resource API.
 
 ### Auto-generate the API file
@@ -338,8 +338,11 @@ These dynamic resources are available in the [Redfish Interface Emulator reposit
 | ./Systems/{id}/Memory | memory.py  
 | ./Systems/{id}/Processors/{id} | processor.py   
 | ./Systems/{id}/SimpleStorage/{id} | simple_storage.py  
+| ./Systems/{id}/Bios | Bios_api.py   
+| ./Systems/{id}/Bios/Settings | BiosSettings_api.py  
 | ./Managers/{id} | Manager_api.py   
-
+| ./Managers/{id}/VirtualMedia | VirtualMedia_api.py
+| ./Managers/{id}/VirtualMedia/{id} | VirtualMedia_api.py
 
 ## SNIA API Emulator
 
@@ -360,7 +363,7 @@ These dynamic resources are available in the [SNIA API Emulator repository](http
 | ./Chassis/{id}/NetworkAdapters/{id}/NetworkDeviceFunctions/{id} | networkdevicefunctions_api.py  
 | ./Chassis/{id}/NetworkAdapters/{id}/Ports/{id} | nwports_api\.py
 | ./Systems/{id} | ComputerSystem_api.py   
-| ./Systems/{id}/Storage/{id}/Volumes/{id} | volumes_api  
+| ./Systems/{id}/Storage/{id}/Volumes/{id} | Volume_api.py  
 | ./Systems/{id}/Storage/{id}/StoragePools/{id} | storagepools_api.py  
 | ./Systems/{id}/Memory/{id} | memory.py
 | ./Systems/{id}/Memory/{id}/MemoryDomains/{id} | memory_domains_api.py
